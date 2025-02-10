@@ -5,11 +5,6 @@ const data = document.getElementById("data");
 // const City = input.value.trim();
 
 
-
-
-
-
-
 const API_Key = "f1d4b38ce19a2ab3a86f1a15efee6d30 ";
 
 async  function fetchData(){
@@ -17,9 +12,13 @@ async  function fetchData(){
     
 
     try {
+
         const City = input.value.trim();
         const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${City},IN&appid=${API_Key}`)
         const  res = await response.json();
+          
+        
+
 
         if(!response.ok){
             data.innerHTML =`
@@ -45,14 +44,7 @@ async  function fetchData(){
 
 
         input.value = ''
-
-        
-        
-         
-      
-        
-
-        
+    
     } catch (error) {
         console.log(error);
         
